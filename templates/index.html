@@ -1,0 +1,372 @@
+
+{% extends 'imports.html' %}
+{% block main %}
+
+<main>
+    {% include 'navbar.html' %}
+            <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-8 col-12 mx-auto">
+                            <h1 class="text-white text-center">Welcome to ASL Detection</h1>
+
+                            <h6 class="text-center text-white">It's Nice To Meet You!</h6>
+                        </div>
+                        <div class="center-button">
+                            <a href="#section_3" class="get-started-button">Get Started</a>
+                          </div>
+                          <style>
+                            .center-button {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 20vh;
+                            }
+
+                            .get-started-button {
+                            display: inline-block;
+                            padding: 15px 30px;
+                            background-color: #007bff;
+                            color: #fff;
+                            font-size: 18px;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            transition: background-color 0.3s ease;
+                            }
+
+.get-started-button:hover {
+  background-color: #0056b3;
+}
+                          </style>
+                          
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section class="explore-section section-padding" id="section_2">
+                <div class="container">
+
+                        <div class="col-12 text-center">
+                            <h2 class="mb-4">About Us</h1>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">About ASL</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">About Team</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
+                                    <div class="row">
+                                        <p>We are a group of passionate individuals brought together by a shared vision and a desire to make a positive impact. 
+                                            With diverse backgrounds and expertise, we form a dynamic collective that thrives on collaboration and innovation. 
+                                            Our teams are driven by a common purpose: to tackle challenges and deliver exceptional results. We believe that the power 
+                                            of teamwork and synergy can bring forth remarkable achievements. Each member brings unique strengths and perspectives to the table, 
+                                            fostering a vibrant environment where ideas flourish and creativity blooms. Innovation lies at the heart of our teams. 
+                                            We embrace cutting-edge technologies and forward-thinking methodologies to drive progress and transform ideas into reality. 
+                                            We are constantly pushing boundaries, exploring new frontiers, and finding novel solutions to complex problems. We are not 
+                                            just colleagues; we are a family. Together, we strive for greatness, making a positive impact on the world through our projects. 
+                                            Join us on this exciting journey as we work hand in hand to shape a better future.</p>
+
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
+                                    <div class="text-center">
+                                        <p>We are a group of passionate individuals brought together by a shared vision and a desire to make a positive impact. 
+                                            With diverse backgrounds and expertise, we form a dynamic collective that thrives on collaboration and innovation. 
+                                        </p> 
+                                    </div>
+                                    <div class="text-center">
+                                        </p>Our teams are driven by a common purpose: to tackle challenges and deliver exceptional results. We believe that the power 
+                                            of teamwork and synergy can bring forth remarkable achievements. Each member brings unique strengths and perspectives to the table, 
+                                            fostering a vibrant environment where ideas flourish and creativity blooms. 
+                                        </p>
+                                    </div>
+                                    <div class="text-center">
+                                        </p>Innovation lies at the heart of our teams. 
+                                        We embrace cutting-edge technologies and forward-thinking methodologies to drive progress and transform ideas into reality. 
+                                        We are constantly pushing boundaries, exploring new frontiers, and finding novel solutions to complex problems. We are not 
+                                        just colleagues; we are a family. Together, we strive for greatness, making a positive impact on the world through our projects. 
+                                        Join us on this exciting journey as we work hand in hand to shape a better future.
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="timeline-section section-padding" id="section_3">
+                <div class="section-overlay"></div>
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <h2 class="text-center text-white mb-4">ASL Tool</h2>
+                            <form id="uploadForm">
+                                <div class="mb-3">
+                                    <label for="imageUpload" class="form-label">Upload Images</label>
+                                    <input type="file" class="form-control" id="imageUpload" accept="image/*" multiple>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="videoUpload" class="form-label">Upload Videos</label>
+                                    <input type="file" class="form-control" id="videoUpload" accept="video/*" multiple>
+                                </div>
+                                <div id="previewSection" class="text-center">
+                                <h4></h4>
+                                <div id="imagePreviews" class="image-previews"></div>
+                                <h4></h4>
+                                <div id="videoPreviews" class="video-previews"></div>
+                                <!-- Cancel Buttons (Initially Hidden) -->
+            <div id="cancelButtons" style="display: none;">
+                <button id="cancelImagesButton" type="button">Cancel Image Uploads</button>
+                <button id="cancelVideosButton" type="button">Cancel Video Uploads</button>
+              </div>
+                            </div>
+                            <style>
+                                .preview-image {
+              position: relative;
+            }
+            
+            .cancel-button {
+              position: absolute;
+              top: 5px;
+              right: 5px;
+              width: 20px;
+              height: 20px;
+              background: transparent;
+              border: none;
+              color: rgb(244, 242, 242);
+              font-size: 20px;
+              cursor: pointer;
+            }
+            .preview-video{
+                position: relative;
+            }
+            
+            .cancel-button {
+              position: absolute;
+              top: 5px;
+              right: 5px;
+              width: 20px;
+              height: 20px;
+              background: transparent;
+              border: none;
+              color: rgb(244, 241, 241);
+              font-size: 20px;
+              cursor: pointer;
+            
+            }
+            
+                            </style>                    
+                
+                            </form>
+                            
+                            <div id="webcamSection" class="text-center">
+                                
+                                <video id="webcamPreview" autoplay playsinline></video>
+                                
+                            <div id="resultSection" class="text-center">
+                                <button id="webcamButton" class="btn btn-primary">Enable Webcam</button>
+                                <button id="captureButton" class="btn btn-primary">Capture</button>
+                                <button id="disableButton" class="btn btn-primary">Disable</button>
+                                <button id="predictButton" class="btn btn-primary">Predict</button>
+                                <h2 class="text-white text-center"> Result </h2>
+                                <p class="text-white text-center">Here is your result</p>
+                        
+                        </div>
+                    </div>
+                </div>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Text Summarizer</title>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                      <div class="col-md-8">
+                        <h1 class="text-center mb-4 text-white">Text Summarizer</h1>
+                        <form id="textSummarizerForm">
+                          <div class="mb-3">
+                            <label for="inputText" class="form-label text-white">Enter your text:</label>
+                            <textarea class="form-control" id="inputText" name="inputText" rows="5" required></textarea>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Summarize</button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="row justify-content-center mt-5">
+                      <div class="col-md-8">
+                        <div class="card">
+                          <div class="card-body">
+                            <h2 class="card-title">Summarized Text</h2>
+                            <div id="summarizedText" class="mt-3"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                
+            </section>
+
+
+            <section class="faq-section section-padding" id="section_4">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12">
+                            <h2 class="mb-4">Technology Used</h2>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-lg-5 col-12">
+                            <img src="{{url_for('static', filename='images/faq_graphic.jpg')}}" class="img-fluid" alt="FAQs">
+                        </div>
+
+                        <div class="col-lg-6 col-12 m-auto">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What technology did we used?
+                                        </button>
+                                    </h2>
+
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            ML
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Error?
+                                    </button>
+                                    </h2>
+
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                        Many
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Run?
+                                    </button>
+                                    </h2>
+
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Yes
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </section>
+
+
+            <section class="contact-section section-padding section-bg" id="section_5">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12 text-center">
+                            <h2 class="mb-5">Get in touch</h2>
+                        </div>
+
+                        <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+                            <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92360.85686225302!2d-79.4397988088979!3d43.65477239465804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sLoyalist%20College!5e0!3m2!1sen!2sca!4v1660344000027!5m2!1sen!2sca" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg- mb-md-0 ms-auto">
+                            <h4 class="mb-3">Head office</h4>
+
+                            <p>4000 Victoria Park Avenue &amp;, North York, Toronto, Canada</p>
+
+                            <hr>
+
+                            <p class="d-flex align-items-center mb-1">
+                                <span class="me-2">Phone</span>
+
+                                <a href="tel: 305-240-9671" class="site-footer-link">
+                                    999-888-777
+                                </a>
+                            </p>
+
+                            <p class="d-flex align-items-center">
+                                <span class="me-2">Email</span>
+
+                                <a href="mailto:info@company.com" class="site-footer-link">
+                                    asldetection@company.com
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12 mx-auto">
+                            <h4 class="mb-3">Belleville Office</h4>
+
+                            <p> 376 Wallbridge Loyalist Rd, Belleville ,ON K8N 5B9, Canada</p>
+
+                            <hr>
+
+                            <p class="d-flex align-items-center mb-1">
+                                <span class="me-2">Phone</span>
+
+                                <a href="tel: 110-220-3400" class="site-footer-link">
+                                    999-888-666
+                                </a>
+                            </p>
+
+                            <p class="d-flex align-items-center">
+                                <span class="me-2">Email</span>
+
+                                <a href="mailto:info@company.com" class="site-footer-link">
+                                    asldetection@company.com
+                                </a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+        {% include 'footer.html' %}
+
+
+
+        {% endblock %}

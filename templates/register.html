@@ -1,0 +1,124 @@
+
+    
+{% extends 'imports.html' %}
+{% block main %}
+
+<main>
+    {% include 'navbar.html' %}
+
+            <header class="site-header d-flex flex-column justify-content-center align-items-center">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-5 col-12">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item text-white"><a href="index.html">Homepage</a></li>
+
+                                    <li class="breadcrumb-item active text-white" aria-current="page">Sign Up</li>
+                                </ol>
+                            </nav>
+
+                            <h2 class="text-white">Register</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+        
+        </main> 
+
+  
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card shadow">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">Register</h2>
+            <form id="registrationForm">
+              <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" required>
+              </div>
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Register</button>
+            </form>
+          </div>
+        </div>
+        <div class="text-center mt-3">
+          <p>Already have an account? <a href="#loginForm">Log In</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card shadow" id="loginForm" style="display: none;">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">Login</h2>
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="loginEmail" name="loginEmail" required>
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="loginPassword" name="loginPassword" required>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Log In</button>
+              <div class="text-center mt-3">
+                <a href="#forgotPassword">Forgot Password?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // Add your JavaScript code for form validation and submission here
+    const registrationForm = document.getElementById('registrationForm');
+    registrationForm.addEventListener('submit', handleRegistration);
+
+    function handleRegistration(event) {
+      event.preventDefault();
+      // Add your form validation and submission logic here
+      // After successful registration, show the login form
+      const loginForm = document.getElementById('loginForm');
+      registrationForm.style.display = 'none';
+      loginForm.style.display = 'block';
+    }
+  </script>
+
+
+{% include 'footer.html' %}
+		
+    
+
+{% endblock %}

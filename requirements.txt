@@ -1,0 +1,14 @@
+tensorflow
+dvc
+pandas
+notebook
+numpy
+matplotlib
+seaborn
+pyarrow
+python-box
+scikit-learn
+scipy
+fastparquet
+
+-e .
